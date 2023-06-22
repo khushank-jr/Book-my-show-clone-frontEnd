@@ -38,15 +38,14 @@ const NavLg = () => {
   return (
     <div className="container mx-auto px-4 flex items-center justify-between">
       <div className="flex items-center w-1/2">
-        <div className="w-35 h-10 ">
-        
+        <div className="w-12 h-12">
           <img
-            src= "https://upload.wikimedia.org/wikipedia/commons/7/75/Bookmyshow-logoid.png"
+            src="https://getlogo.net/bookmyshow-logo-vector-svg/" target="_blank"><img src="https://getlogo.net/wp-content/uploads/2020/04/bookmyshow-logo-vector.png"
             alt="logo"
-            className="w-full h-full bg-white rounded-l-sm pl-2 "
+            className="w-full h-full"
           />
         </div>
-        <div className="w-full flex items-center bg-white gap-3 px-3 py-2 rounded-r-sm">
+        <div className="w-full flex items-center bg-white gap-3 px-3 py-2 rounded-sm">
           <BiSearch className="fill-slate-500 flex items-center" />
           <input
             type="search"

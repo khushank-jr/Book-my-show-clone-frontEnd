@@ -1,5 +1,5 @@
 import React from "react";
-import { BiChevronRight, BiSearch, BiChevronDown, BiMenu } from "react-icons/bi";
+import { BiChevronRight, BiSearch, BiChevronDown, BiMenu,BiChevronLeft, BiShareAlt } from "react-icons/bi";
 
 //For small Screen
 const NavSm = () => {
@@ -8,30 +8,17 @@ const NavSm = () => {
       <div className="text-white flex items-center justify-between">
         <div>
           <h3 className="text-xl font-bold">It All Starts Here!</h3>
-          <span className="text-gray-400 text-xs flex items-center">
-            Raipur <BiChevronRight />
-          </span>
+          
         </div>
         <div className="w-8 h-7 flex items-center">
-          <BiSearch className="w-full h-full" />
+          <BiShareAlt className="w-full h-full" />
         </div>
       </div>
     </>
   );
 };
 //For Medium Screen
-const NavMd = () => {
-  return (
-    <div className="w-full flex items-center bg-white gap-3 px-3 py-2 rounded-sm">
-      <BiSearch className="fill-slate-500 flex items-center" />
-      <input
-        type="search"
-        className="w-full focus:outline-none"
-        placeholder="Search for Movies,Events,Plays,Sports and Activities"
-      ></input>
-    </div>
-  );
-};
+
 
 //For Large screen
 const NavLg = () => {
@@ -74,20 +61,20 @@ const NavLg = () => {
   );
 };
 
-const Navbar = () => {
+const MovieNavbar = () => {
   return (
     <>
-      <nav className="bg-navCol-800 px-4 py-3">
+      <nav className="absolute  inset-x-0 z-30 bg-opacity-10 backdrop-filter backdrop-blur-lg lg:relative bg-navCol-800 px-4 py-3">
         <div className="md:hidden">
           {
             //Mobile Screen
             <NavSm />
           }
         </div>
-        <div className="hidden lg:hidden md:flex">
+        <div className="hidden lg:hidden md:block ">
           {
             //Tablet Screen
-            <NavMd />
+            <NavSm />
           }
         </div>
         <div className="hidden lg:flex">
@@ -101,4 +88,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default MovieNavbar;

@@ -13,6 +13,12 @@ search react-slick npm for carousel
  // also usefull imp
  https://kenwheeler.github.io/slick/
 -----------------------------------------------------------------------
+Headless UI: for toggle buttons, listbox, accordian etc
+for react only
+----------------------------------------------------------------------
+www.themoviedb.org for database and use for api
+username:github ka username hai
+----------------------------------------------------------------------
  /*
  //SPREAD OPERATOR
 

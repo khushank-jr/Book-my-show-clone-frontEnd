@@ -1,12 +1,26 @@
-import React from "react";
-
+import React, {useState, useEffect} from "react";
+import axios from "axios";
 import EntertainmentCardSlider from "../components/Entertainment/Entertainmentcard.component";
 // eslint-disable-next-line
 import Premier from "../components/Premier/Premier.component.js";
 import PosterSlider from "../components/PosterSider/PosterSider.component";
 import TempPosters from "../config/tempPosters.config";
 
+
 const HomePage = () =>{
+
+        const[popularMovies, setPopularMovies] = useState([]);
+
+        useEffect(() => {
+            const requestPopularMovies = async () => {
+             const getPopularMovies = await axios.get("/movie/popular");
+             setPopularMovies(getPopularMovies.data.results);
+        }
+        requestPopularMovies();
+    },[]);
+
+    
+
     return (
     <>
         <div className="flex flex-col gap-8">
@@ -28,21 +42,21 @@ const HomePage = () =>{
                 className="w-full h-full"
             />
         </div>
-        <PosterSlider images = {TempPosters} title = "Premiers" subitle="Brand New releases every Friday" isDark={true} />
+        <PosterSlider images = {popularMovies} title = "Premiers" subitle="Brand New releases every Friday" isDark={true} />
         </div>
          </div>  
         </div>
 
         <div className="container mx-auto px-10">
             <PosterSlider
-               images={TempPosters}
+               images={popularMovies}
                title="Online Streaming Events"
                isDark={false} 
             />
         </div>
         <div className="container mx-auto px-10">
             <PosterSlider
-               images={TempPosters}
+               images={popularMovies}
                title="Outdoor Events"
                isDark={false} 
             />
